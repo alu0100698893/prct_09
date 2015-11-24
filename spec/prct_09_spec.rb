@@ -67,5 +67,35 @@ describe Bibliografia do
       @lista.insert_head(@nodo2)
       expect(@lista.head.class).to eq(Nodo)
     end
+    
+        it "#Pruebas para utilizar el Mixin Enumerable - Funcion maximo" do #coje de los nodos de de la lista el de mayor rango
+        
+      	expect(@lista1.max).to eq(@libro_2) 
+    end
+    
+    it "#Pruebas para utilizar el Mixin Enumerable - Funcion minimo" do #coje de los nodos de la lista el de menor rango 
 
+      	expect(@lista1.min).to eq(@libro_1) 
+    end   
+      
+    it "#Funcion sort: Devuelve las salidas a la inversa segun la publicacion " do  #
+        p = @lista1.sort{|b, a| a.publicacion <=> b.publicacion}
+        expect(p).to eq([@libro_4,@libro_3,@libro_2,@libro_1])
+    end
+      
+    it "#Funcion include" do
+      	expect(@lista1.include?@libro_1).to eq(true)
+      	expect(@lista1.include?@libro_2).to eq(true)
+      	expect(@lista1.include?@libro_3).to eq(true)
+      	expect(@lista1.include?@libro_4).to eq(true)
+    end
+      
+    it "#Funcion each" do
+      	expect(@lista1.each{|x|}).to eq(@lista1.to_s)
+    end
+    
+  end
+  
+end
+end
 
