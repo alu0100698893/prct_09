@@ -143,5 +143,36 @@ end
           @libro.is_a? BasicObject
         end
 
+        describe "Comparación de las referencias utilizando el Comparable" do
+    
+    	it "#La referencia 1 es menor que la referencia 2" do
+    	  expect(@libro_1.autores[0] < @libro_2.autores[0]).to eq(true)
+    	  expect(@libro_3.autores[0] < @libro_1.autores[0]).to eq(false)
+    	 
+    	end
+    	
+    	it "#La referencia 1 es mayor que la referencia 2" do
+    	  expect(@libro_1.autores[0] > @libro_2.autores[0]).to eq(false)
+    	  expect(@libro_3.autores[0] > @libro_1.autores[0]).to eq(false)
+    	  
+    	end
+    	
+    	it "#La referencia 1 es igual que la referencia 2" do
+    	  expect(@libro_1.autores[0] == @libro_2.autores[0]).to eq(false)
+    	end
+    	
+    	it "#La referencia 1 es menor igual que la referencia 2" do
+    	  expect(@libro_1.autores[0] <= @libro_2.autores[0]).to eq(true)
+    	end
+    	
+    	it "#La referencia 1 es mayor igual que la referencia 2" do
+    	  expect(@libro_1.autores[0] >= @libro_2.autores[0]).to eq(false)
+    	end
+   
+end
+end
+    
+end
+end
 
 
