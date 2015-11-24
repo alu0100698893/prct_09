@@ -12,4 +12,24 @@ class Bibliografia
         @publicacion = publicacion
         @edicion = edicion
     end
+
+    def <=>(other)
+
+		return nil unless other.is_a?Bibliografia   #retorna nil si se cumple que no se cumpla el is_a? y salimos
+		
+		@autores  <=> other.autores
+		
+    end
+	
+	def ==(other)
+		
+		if other.is_a?Bibliografia
+		    
+		    @titulo == other.titulo && @autores == other.autores && @publicacion == other.publicacion && @edicion == other.edicion
+		
+		else
+		    false
+		end
+	end
+
 end
