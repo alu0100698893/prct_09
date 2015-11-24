@@ -120,7 +120,28 @@ end
       @libro.is_a? BasicObject
     end
     
-end
+
+    describe Libros do  #Pruebas con la clase hija libros
+  
+        before :each do
+          @libro = Libros.new("Richard E. Silverman","Git Pocket Guide","August 2, 2013","1","O’Reilly Media","1449325866, 978-1449325862")
+        end
+        
+        it "#El objeto pertenece a la clase" do
+          @libro.class == Libros
+        end
+        
+        it "#El objeto pertenece a la jerarquia" do
+          expect(@libro.class.superclass).to eq(Bibliografia)
+        end
+        
+         it "#El objeto pertenece a la clase Object" do
+          @libro.is_a? Object
+        end
+        
+         it "#El objeto pertenece a la clase BasicObject" do
+          @libro.is_a? BasicObject
+        end
 
 
 
